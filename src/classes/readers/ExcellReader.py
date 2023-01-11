@@ -37,8 +37,8 @@ class ExcellReader(Reader):
         filteredElements = []
         for element in self.elements:
             filteredElement = {} 
-            for (key,value) in element.items():
-                if key in attributes:
-                    filteredElement[key] = value
+            for attribute in attributes:
+                if attribute in element:
+                    filteredElement[attribute] = element[attribute]
             filteredElements.append(filteredElement)
         return filteredElements
